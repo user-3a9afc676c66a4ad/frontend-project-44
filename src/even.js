@@ -5,6 +5,7 @@ const even = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello,${name}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no"');
+
   let i = 1;
   while (i <= 3) {
     let number = randomNumber(1, 100);
@@ -13,21 +14,34 @@ const even = () => {
     }
     console.log('Question:' + number);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === 'yes' && number % 2 === 0) {
-      console.log('Correct!');
-    } else if (answer === 'no' && number % 2 !== 0) {
-      console.log('Correct!');
-    } else {
+
+    let correctAnsw = '';
+
+    const wrong = () => {
       console.log(
-        '"yes" is wrong answer ;(. Correct answer was "no".\nLet\'s try again,' +
-          name +
-          '!'
+        `'${answer}' is wrong answer ;(. Correct answer was ${correctAnsw}.\nLet's try again, ${name}!`
       );
-      break;
+    };
+
+    if (
+      (answer === 'yes' && number % 2 === 0) ||
+      (answer === 'no' && number % 2 !== 0)
+    ) {
+      console.log('Correct!'); // правильные ответы. Работают, если закончить цикл
+    } else if (answer === 'no' && number % 2 === 0) {
+      correctAnsw = "'yes'";
+      return wrong();
+    } else if (answer === 'yes' && number % 2 !== 0) {
+      correctAnsw = "'no'";
+      return wrong();
+    } else if (answer === '.') {
+      correctAnsw = "'yes' or 'no'";
+      return wrong();
     }
+
     i = i + 1;
   }
-  console.log('Congratulations,' + name + '!');
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default even;
