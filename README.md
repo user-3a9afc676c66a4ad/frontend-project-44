@@ -7,10 +7,15 @@
 ### Установка brain-games
 
 [![asciicast](https://asciinema.org/a/pYZdycnj6HQb3xxarOwOVfZ0k.svg)](https://asciinema.org/a/pYZdycnj6HQb3xxarOwOVfZ0k)
-<a href="https://asciinema.org/a/pYZdycnj6HQb3xxarOwOVfZ0k" target="_blank"><img src="https://asciinema.org/a/pYZdycnj6HQb3xxarOwOVfZ0k.svg" /></a>
 
 ### Запуск brain-even
 
+[![asciicast](https://asciinema.org/a/EJmkCCbWqassP3NFaPslodHym.svg)](https://asciinema.org/a/EJmkCCbWqassP3NFaPslodHym)
+
 ### brain-even победная сессия
 
+[![asciicast](https://asciinema.org/a/xnMHZrVPzfH8Qw6cxYy6WjIeC.svg)](https://asciinema.org/a/xnMHZrVPzfH8Qw6cxYy6WjIeC)
+
 ### brain-even поражение
+
+[![asciicast](https://asciinema.org/a/lAHLsbWtez18UOaodfMDOdXVT.svg)](https://asciinema.org/a/lAHLsbWtez18UOaodfMDOdXVT)
