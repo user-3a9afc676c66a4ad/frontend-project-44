@@ -27,16 +27,16 @@ const even = () => {
       (answer === 'yes' && number % 2 === 0) ||
       (answer === 'no' && number % 2 !== 0)
     ) {
-      console.log('Correct!'); // правильные ответы. Работают, если закончить цикл
+      console.log('Correct!');
     } else if (answer === 'no' && number % 2 === 0) {
       correctAnsw = "'yes'";
       return wrong();
     } else if (answer === 'yes' && number % 2 !== 0) {
       correctAnsw = "'no'";
       return wrong();
-    } else if (answer === '.') {
+    } else if ((answer !== 'yes', 'no')) {
       correctAnsw = "'yes' or 'no'";
-      return wrong();
+      return wrong(); //правильно записать \w
     }
 
     i = i + 1;
