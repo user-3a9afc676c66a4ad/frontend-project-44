@@ -6,13 +6,14 @@ const even = () => {
   console.log(`Hello,${name}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no"');
 
+  function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
   let i = 1;
   while (i <= 3) {
-    let number = randomNumber(1, 100);
-    function randomNumber(min, max) {
-      return Math.floor(Math.random() * (max - min) + min);
-    }
-    console.log('Question:' + number);
+    const number = randomNumber(1, 100);
+    console.log(`Question:${number}`);
     const answer = readlineSync.question('Your answer: ');
 
     let correctAnsw = '';
@@ -22,7 +23,6 @@ const even = () => {
         `'${answer}' is wrong answer ;(. Correct answer was ${correctAnsw}.\nLet's try again, ${name}!`
       );
     };
-
     if (
       (answer === 'yes' && number % 2 === 0) ||
       (answer === 'no' && number % 2 !== 0)
@@ -35,11 +35,11 @@ const even = () => {
       correctAnsw = "'no'";
       return wrong();
     } else if ((answer !== 'yes', 'no')) {
-      correctAnsw = "'yes' or 'no'";
-      return wrong(); //правильно записать \w
+      correctAnsw = "'yes' or 'no'"; // \w not work
+      return wrong();
     }
 
-    i = i + 1;
+    i += 1;
   }
   console.log(`Congratulations, ${name}!`);
 };
