@@ -1,48 +1,29 @@
-import readlineSync from 'readline-sync';
+import playGame from '../index.js';
 
-const calc = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello,${name}!`);
-  console.log('What is the result of the expression?');
+import randomNumber from '../utils.js';
 
-  function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
+const questionGame = 'What is the result of the expression?';
+
+const questionRound = () => {
+  const number1 = randomNumber(1, 10);
+  const number2 = randomNumber(1, 10);
+  const arr = ['+', '-', '*'];
+  const mathOperation = Math.floor(Math.random() * arr.length);
+  const oper = arr[mathOperation];
+  const question = `Question:${number1} ${oper} ${number2}`;
+
+  let result = 0;
+  if (mathOperation === 0 || oper === '+') {
+    result = `${number1 + number2}`;
+  } else if (mathOperation === 1 || oper === '-') {
+    result = `${number1 - number2}`;
+  } else if (mathOperation === 2 || oper === '*') {
+    result = `${number1 * number2}`;
   }
 
-  let i = 1;
-  while (i <= 3) {
-    const number1 = randomNumber(1, 10);
-    const number2 = randomNumber(1, 10);
-    const arr = ['+', '-', '*'];
-    const mathOperation = Math.floor(Math.random() * arr.length);
-    const oper = arr[mathOperation];
-    console.log(`Question:${number1} ${oper} ${number2}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    let correctAnsw = 0;
-    if (mathOperation === 0 || oper === '+') {
-      correctAnsw = `${number1 + number2}`;
-    } else if (mathOperation === 1 || oper === '-') {
-      correctAnsw = `${number1 - number2}`;
-    } else if (mathOperation === 2 || oper === '*') {
-      correctAnsw = `${number1 * number2}`;
-    }
-
-    const wrong = () => {
-      console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${name}!`
-      );
-    };
-
-    if (answer === correctAnsw) {
-      console.log('Correct!');
-    } else if (answer !== correctAnsw) {
-      return wrong();
-    }
-    i += 1;
-  }
-  console.log(`Congratulations, ${name}!`);
+  return [question, result];
 };
 
-export default calc;
+const calcGame = () => playGame(questionGame, questionRound);
+
+export default calcGame;
