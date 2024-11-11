@@ -5,18 +5,17 @@ import randomNumber from '../utils.js';
 const questionGame = 'Find the greatest common divisor of given numbers.';
 
 const questionRound = () => {
-  const number1 = randomNumber(1, 10);
-  const number2 = randomNumber(1, 10);
+  let number1 = randomNumber(1, 10);
+  let number2 = randomNumber(1, 10);
   const question = `Question:${number1} ${number2}`;
 
   let result = 0;
-  if (number1 === 0 || number2 === '+') {
-    result = `${number1 + number2}`;
-  } else if (number1 === 1 || number2 === '-') {
-    result = `${number1 - number2}`;
-  } else if (number1 === 2 || number2 === '*') {
-    result = `${number1 * number2}`;
+  while (number2 !== 0) {
+    const temp = number2;
+    number2 = number1 % number2;
+    number1 = temp;
   }
+  result = number1.toString();
 
   return [question, result];
 };
