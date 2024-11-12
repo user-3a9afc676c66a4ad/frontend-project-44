@@ -14,3 +14,7 @@
 ### Пример игры brain-gcd
 
 [![asciicast](https://asciinema.org/a/zD9FHg1Es4PUsRR9RLx09Gish.svg)](https://asciinema.org/a/zD9FHg1Es4PUsRR9RLx09Gish)
+
+### Пример игры brain-progression
+
+[![asciicast](https://asciinema.org/a/EDdHxbbIDtCGGcz6JN5Eib4K7.svg)](https://asciinema.org/a/EDdHxbbIDtCGGcz6JN5Eib4K7)
