@@ -5,21 +5,31 @@ import randomNumber from '../utils.js';
 const questionGame = 'What number is missing in the progression?';
 
 const questionRound = () => {
-  let number1 = randomNumber(1, 10);
-  let number2 = randomNumber(1, 10);
-  const question = `Question:${number1} ${number2} ${number2} ${number2}`;
+  const number = randomNumber(1, 50);
+  const length = randomNumber(2, 10);
+  const step = randomNumber(1, 10);
+  const itemSkip = randomNumber(2, length);
+  const progression = () => {
+    const arr = [];
+    for (let i = 0; i <= length; i += 1) {
+      arr.push(number + i * step);
+    }
+    // arr[itemSkip] = '..';
+    return arr;
+  };
 
-  let result = 0;
-  while (number2 !== 0) {
-    const temp = number2;
-    number2 = number1 % number2;
-    number1 = temp;
-  }
-  result = number1.toString();
+  const result = progression()[itemSkip].toString();
+
+  const arrProgression = progression();
+  const skipItem = arrProgression.splice([itemSkip], 1, '..');
+
+  const question = `Question: ${arrProgression}`;
+
+  // console.log(skipItem);
 
   return [question, result];
 };
 
-const gcdGame = () => playGame(questionGame, questionRound);
+const progressionGame = () => playGame(questionGame, questionRound);
 
-export default gcdGame;
+export default progressionGame;
