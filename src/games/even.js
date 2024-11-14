@@ -7,7 +7,7 @@ const questionGame =
 
 const questionRound = () => {
   const number = randomNumber(1, 100);
-  const question = `Question:${number}`;
+  const question = `Question: ${number}`;
 
   let result = 0;
   if (number % 2 === 0) {
