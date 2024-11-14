@@ -3,7 +3,7 @@ import playGame from '../index.js';
 import randomNumber from '../utils.js';
 
 const questionGame =
-  'Answer "yes" if the number is even, otherwise answer "no"';
+  'Answer "yes" if the number is even, otherwise answer "no".';
 
 const questionRound = () => {
   const number = randomNumber(1, 100);
