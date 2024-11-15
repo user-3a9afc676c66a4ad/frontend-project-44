@@ -1,9 +1,14 @@
 import readlineSync from 'readline-sync';
-
-const playGame = (questiongame, questionRound) => {
+// приветствие и имя
+const greetUser = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello,${name}!`); // приветствие и имя
+  console.log(`Hello,${name}!`);
+  return name;
+};
+
+const playGame = (questiongame, questionRound) => {
+  const greeting = greetUser();
   console.log(questiongame); // вывод вопроса игры
   // цикл игры = 3
   let i = 1;
@@ -16,7 +21,7 @@ const playGame = (questiongame, questionRound) => {
     // вывод неправильного ответа
     const wrong = () => {
       console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${name}!`
+        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${greeting}!`
       );
     };
     // проверка
@@ -28,7 +33,7 @@ const playGame = (questiongame, questionRound) => {
     i += 1;
   }
 
-  console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${greeting}!`);
 };
 
 export default playGame;
