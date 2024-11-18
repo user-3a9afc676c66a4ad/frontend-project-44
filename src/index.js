@@ -1,19 +1,13 @@
 import readlineSync from 'readline-sync';
 
-// запрос имени
-import username from './cli.js';
-
 // приветствие
-export const greetUser = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = username();
-  console.log(`Hello, ${userName}!`);
-  return userName;
-};
+import greetUser from './cli.js';
 
 const playGame = (questiongame, questionRound) => {
-  // const userName = greetUser; // Как передать толлько имя? без функции и её выполнения
-  console.log(questiongame); // вывод вопроса игры
+  // приветствие
+  const userName = greetUser();
+  // вывод вопроса игры
+  console.log(questiongame);
   // цикл игры = 3
   let i = 1;
   while (i <= 3) {
@@ -25,7 +19,7 @@ const playGame = (questiongame, questionRound) => {
     // вывод неправильного ответа
     const wrong = () => {
       console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${username}!`
+        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${userName}!`
       );
     };
     // проверка
@@ -37,7 +31,11 @@ const playGame = (questiongame, questionRound) => {
     i += 1;
   }
 
-  console.log(`Congratulations, ${username}!`);
+  // финальное сообщение о победе
+  const winMessage = () => {
+    console.log(`Congratulations, ${userName}!`);
+  };
+  winMessage();
 };
 
 export default playGame;
