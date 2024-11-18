@@ -4,14 +4,15 @@ import readlineSync from 'readline-sync';
 import username from './cli.js';
 
 // приветствие
-const greetUser = () => {
+export const greetUser = () => {
   console.log('Welcome to the Brain Games!');
   const userName = username();
   console.log(`Hello, ${userName}!`);
+  return userName;
 };
 
 const playGame = (questiongame, questionRound) => {
-  const userName = username();
+  // const userName = greetUser; // Как передать толлько имя? без функции и её выполнения
   console.log(questiongame); // вывод вопроса игры
   // цикл игры = 3
   let i = 1;
@@ -24,7 +25,7 @@ const playGame = (questiongame, questionRound) => {
     // вывод неправильного ответа
     const wrong = () => {
       console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${userName}!`
+        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${username}!`
       );
     };
     // проверка
@@ -36,7 +37,7 @@ const playGame = (questiongame, questionRound) => {
     i += 1;
   }
 
-  console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${username}!`);
 };
 
 export default playGame;

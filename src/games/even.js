@@ -1,6 +1,8 @@
-import playGame from '../index.js';
+import playGame, { greetUser } from '../index.js';
 
 import randomNumber from '../utils.js';
+
+greetUser();
 
 const questionGame =
   'Answer "yes" if the number is even, otherwise answer "no".';
