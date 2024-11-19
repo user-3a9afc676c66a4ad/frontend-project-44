@@ -15,13 +15,19 @@ node.js не ниже версии 18.0.0
 git clone git@github.com:user-3a9afc676c66a4ad/frontend-project-44.git
 ```
 
-Выполните команду ```bash
-make install
+Выполните команду
 
-````
-Для запуска игр используйте команды: ```bash
-brain-even, brain-calc, brain-gcd, brain-progression, brain-prime
-````
+```bash
+make install
+```
+
+Для запуска игр используйте команды:
+
+- brain-even
+- brain-calc
+- brain-gcd
+- brain-progression
+- brain-prime
 
 ### Пример игры brain-even
 
