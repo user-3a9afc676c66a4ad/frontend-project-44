@@ -31,7 +31,7 @@ make install
 
 ### Пример игры brain-even
 
-[![asciicast](https://asciinema.org/a/XosVjJk2uCyW5Ful3tCFEIoRP.svg)](https://asciinema.org/a/XosVjJk2uCyW5Ful3tCFEIoRP)
+[![asciicast](https://asciinema.org/a/KUkUodhmpykP6aScebsVoxgCh.svg)](https://asciinema.org/a/KUkUodhmpykP6aScebsVoxgCh)
 
 ### Пример игры brain-calc
 
