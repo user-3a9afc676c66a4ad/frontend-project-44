@@ -7,7 +7,7 @@ const questionGame =
 
 const questionRound = () => {
   const number = randomNumber(1, 10);
-  const question = `Question:${number}`;
+  const question = `Question: ${number}`;
 
   let result = '';
   const isPrime = () => {
