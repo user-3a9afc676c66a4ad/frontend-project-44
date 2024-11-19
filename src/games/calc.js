@@ -10,7 +10,7 @@ const questionRound = () => {
   const arr = ['+', '-', '*'];
   const mathOperation = Math.floor(Math.random() * arr.length);
   const oper = arr[mathOperation];
-  const question = `Question:${number1} ${oper} ${number2}`;
+  const question = `Question: ${number1} ${oper} ${number2}`;
 
   let result = 0;
   if (mathOperation === 0 || oper === '+') {
