@@ -12,8 +12,8 @@ const questionRound = () => {
   let result = '';
   const isPrime = () => {
     if (number <= 1) return 'no';
-    for (let i = 2; i < Math.sqrt(number); i += 1) {
-      if (number % i === 0) return 'no';
+    for (let divider = 2; divider <= number / 2; divider += 1) {
+      if (number % divider === 0) return 'no';
     }
     return 'yes';
   };
