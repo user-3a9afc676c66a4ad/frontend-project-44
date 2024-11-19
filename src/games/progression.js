@@ -20,9 +20,9 @@ const questionRound = () => {
   const result = progression()[itemSkip].toString();
 
   const arrProgression = progression();
-
+  /* eslint-disable no-unused-vars */
   const skipItem = arrProgression.splice([itemSkip], 1, '..');
-
+  /* eslint-enable no-unused-vars */
   const question = `Question: ${arrProgression.join(' ')}`;
 
   return [question, result];

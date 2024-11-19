@@ -18,9 +18,7 @@ const playGame = (questiongame, questionRound) => {
     const correctAnsw = round[1];
     // вывод неправильного ответа
     const wrong = () => {
-      console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${userName}!`
-      );
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${userName}!`);
     };
     // проверка
     if (answer === correctAnsw) {
@@ -35,7 +33,7 @@ const playGame = (questiongame, questionRound) => {
   const winMessage = () => {
     console.log(`Congratulations, ${userName}!`);
   };
-  winMessage();
+  return winMessage();
 };
 
 export default playGame;

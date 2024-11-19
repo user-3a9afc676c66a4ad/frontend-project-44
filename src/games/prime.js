@@ -2,8 +2,7 @@ import playGame from '../index.js';
 
 import randomNumber from '../utils.js';
 
-const questionGame =
-  'Answer "yes" if given number is prime. Otherwise answer "no".';
+const questionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const questionRound = () => {
   const number = randomNumber(1, 10);
