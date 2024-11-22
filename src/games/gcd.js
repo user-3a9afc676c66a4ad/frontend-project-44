@@ -1,12 +1,12 @@
 import playGame from '../index.js';
 
-import randomNumber from '../utils.js';
+import getRandomInRange from '../utils.js';
 
 const questionGame = 'Find the greatest common divisor of given numbers.';
 
 const questionRound = () => {
-  let number1 = randomNumber(1, 10);
-  let number2 = randomNumber(1, 10);
+  let number1 = getRandomInRange();
+  let number2 = getRandomInRange();
   const question = `Question: ${number1} ${number2}`;
 
   let result = 0;

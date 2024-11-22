@@ -1,11 +1,11 @@
 import playGame from '../index.js';
 
-import randomNumber from '../utils.js';
+import getRandomInRange from '../utils.js';
 
 const questionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const questionRound = () => {
-  const number = randomNumber(1, 100);
+  const number = getRandomInRange();
   const question = `Question: ${number}`;
 
   let result = 0;

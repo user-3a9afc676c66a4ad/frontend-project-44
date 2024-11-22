@@ -1,23 +1,23 @@
 import playGame from '../index.js';
 
-import randomNumber from '../utils.js';
+import getRandomInRange from '../utils.js';
 
 const questionGame = 'What is the result of the expression?';
 
 const questionRound = () => {
-  const number1 = randomNumber(1, 10);
-  const number2 = randomNumber(1, 10);
+  const number1 = getRandomInRange();
+  const number2 = getRandomInRange();
   const arr = ['+', '-', '*'];
   const mathOperation = Math.floor(Math.random() * arr.length);
   const oper = arr[mathOperation];
   const question = `Question: ${number1} ${oper} ${number2}`;
 
   let result = 0;
-  if (mathOperation === 0 || oper === '+') {
+  if (oper === '+') {
     result = `${number1 + number2}`;
-  } else if (mathOperation === 1 || oper === '-') {
+  } else if (oper === '-') {
     result = `${number1 - number2}`;
-  } else if (mathOperation === 2 || oper === '*') {
+  } else if (oper === '*') {
     result = `${number1 * number2}`;
   }
 

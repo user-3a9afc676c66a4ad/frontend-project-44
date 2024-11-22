@@ -1,14 +1,14 @@
 import playGame from '../index.js';
 
-import randomNumber from '../utils.js';
+import getRandomInRange from '../utils.js';
 
 const questionGame = 'What number is missing in the progression?';
 
 const questionRound = () => {
-  const number = randomNumber(1, 50);
-  const length = randomNumber(5, 10);
-  const step = randomNumber(1, 10);
-  const itemSkip = randomNumber(2, length);
+  const number = getRandomInRange();
+  const length = getRandomInRange(5, 10);
+  const step = getRandomInRange(1, 10);
+  const itemSkip = getRandomInRange(2, length);
   const progression = () => {
     const arr = [];
     for (let i = 0; i <= length; i += 1) {

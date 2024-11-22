@@ -1,11 +1,11 @@
 import playGame from '../index.js';
 
-import randomNumber from '../utils.js';
+import getRandomInRange from '../utils.js';
 
 const questionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const questionRound = () => {
-  const number = randomNumber(1, 10);
+  const number = getRandomInRange();
   const question = `Question: ${number}`;
 
   let result = '';

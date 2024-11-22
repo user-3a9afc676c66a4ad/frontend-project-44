@@ -3,34 +3,41 @@
 [![Actions Status](https://github.com/user-3a9afc676c66a4ad/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/user-3a9afc676c66a4ad/frontend-project-44/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/128ae8004457aa7a95fd/maintainability)](https://codeclimate.com/github/user-3a9afc676c66a4ad/frontend-project-44/maintainability)
 
-«Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново.
+Mind Games is a set of five console games based on the principle of popular mobile brain—boosting applications. Each game asks questions that need to be answered correctly. After three correct answers, it is considered that the game is over. Incorrect answers end the game and offer to go through it again.
 
-Игры:
+### Games:
 
-- Определение четного числа.
-- Калькулятор. Арифметические выражения, которые необходимо вычислить.
-- Определение наибольшего общего делителя.
-- Прогрессия. Поиск пропущенных чисел в последовательности чисел.
-- Определение простого числа.
+- The definition of an even number
+- Calculator. Arithmetic expressions that need to be calculated
+- Determination of the largest common divisor
+- Progression. Search for missing numbers in a sequence of numbers
+- Definition of a prime number
 
-Минимальные требования:
-node.js не ниже версии 18.0.0
+### Minimum requirements:
 
-Установка:
+node.js is not lower than version 18.0.0
 
-1. Склонируйте репозиторий
+### Installation:
+
+1. Clone the repository
 
 ```bash
 git clone git@github.com:user-3a9afc676c66a4ad/frontend-project-44.git
 ```
 
-1. Выполните команду
+2. Run the command
 
 ```bash
 make install
 ```
 
-Для запуска игр используйте команды:
+3. Run the command in the root directory Mind Games
+
+```bash
+npm link
+```
+
+### To start the games, use the commands:
 
 - brain-even
 - brain-calc
@@ -38,22 +45,22 @@ make install
 - brain-progression
 - brain-prime
 
-### Пример установки и игры brain-even
+### An example of installing and playing brain-even
 
 [![asciicast](https://asciinema.org/a/KUkUodhmpykP6aScebsVoxgCh.svg)](https://asciinema.org/a/KUkUodhmpykP6aScebsVoxgCh)
 
-### Пример игры brain-calc
+### An example of a brain-calc game
 
 [![asciicast](https://asciinema.org/a/Wa2RjDy337dhujFiz8IDVk01P.svg)](https://asciinema.org/a/Wa2RjDy337dhujFiz8IDVk01P)
 
-### Пример игры brain-gcd
+### An example of a brain-gcd game
 
 [![asciicast](https://asciinema.org/a/zD9FHg1Es4PUsRR9RLx09Gish.svg)](https://asciinema.org/a/zD9FHg1Es4PUsRR9RLx09Gish)
 
-### Пример игры brain-progression
+### An example of a brain-progression game
 
 [![asciicast](https://asciinema.org/a/EDdHxbbIDtCGGcz6JN5Eib4K7.svg)](https://asciinema.org/a/EDdHxbbIDtCGGcz6JN5Eib4K7)
 
-### Пример игры brain-prime
+### An example of a brain-prime game
 
 [![asciicast](https://asciinema.org/a/7BjFKY3TInA0T3hssfILrR0nx.svg)](https://asciinema.org/a/7BjFKY3TInA0T3hssfILrR0nx)

@@ -1,39 +1,30 @@
 import readlineSync from 'readline-sync';
 
-// приветствие
-import greetUser from './cli.js';
+import makeWelcome from './cli.js';
 
 const playGame = (questiongame, questionRound) => {
-  // приветствие
-  const userName = greetUser();
-  // вывод вопроса игры
+  // greeting
+  const userName = makeWelcome();
+  // outputting of the game question
   console.log(questiongame);
-  // цикл игры = 3
-  let i = 1;
-  while (i <= 3) {
+  // game cycle = 3
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
     const round = questionRound();
     console.log(round[0]);
     const answer = readlineSync.question('Your answer: ');
-    // правильный ответ
+    // right answer
     const correctAnsw = round[1];
-    // вывод неправильного ответа
-    const wrong = () => {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${userName}!`);
-    };
-    // проверка
+    //  checking and output of the answers
     if (answer === correctAnsw) {
       console.log('Correct!');
-    } else if (answer !== correctAnsw) {
-      return wrong();
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${userName}!`);
+      return;
     }
-    i += 1;
   }
-
-  // финальное сообщение о победе
-  const winMessage = () => {
-    console.log(`Congratulations, ${userName}!`);
-  };
-  return winMessage();
+  // the final message of victory
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default playGame;
