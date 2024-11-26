@@ -4,26 +4,26 @@ import getRandomInRange from '../utils.js';
 
 const questionGame = 'What is the result of the expression?';
 
-const questionRound = () => {
+const generateRound = () => {
   const number1 = getRandomInRange();
   const number2 = getRandomInRange();
-  const arr = ['+', '-', '*'];
-  const mathOperation = Math.floor(Math.random() * arr.length);
-  const oper = arr[mathOperation];
+  const operators = ['+', '-', '*'];
+  const mathOperation = getRandomInRange(0, operators.length - 1);
+  const oper = operators[mathOperation];
   const question = `Question: ${number1} ${oper} ${number2}`;
 
-  let result = 0;
+  let answer = 0;
   if (oper === '+') {
-    result = `${number1 + number2}`;
+    answer = `${number1 + number2}`;
   } else if (oper === '-') {
-    result = `${number1 - number2}`;
+    answer = `${number1 - number2}`;
   } else if (oper === '*') {
-    result = `${number1 * number2}`;
+    answer = `${number1 * number2}`;
   }
 
-  return [question, result];
+  return [question, answer];
 };
 
-const calcGame = () => playGame(questionGame, questionRound);
+const calcGame = () => playGame(questionGame, generateRound);
 
 export default calcGame;

@@ -1,25 +1,23 @@
 import readlineSync from 'readline-sync';
-
 import makeWelcome from './cli.js';
+// set game cycles
+const roundsCount = 3;
 
-const playGame = (questiongame, questionRound) => {
+const playGame = (questiongame, generateRound) => {
   // greeting
   const userName = makeWelcome();
   // outputting of the game question
   console.log(questiongame);
   // game cycle = 3
-  const roundsCount = 3;
   for (let i = 0; i < roundsCount; i += 1) {
-    const round = questionRound();
-    console.log(round[0]);
-    const answer = readlineSync.question('Your answer: ');
-    // right answer
-    const correctAnsw = round[1];
+    const [question, answer] = generateRound();
+    console.log(question);
+    const userAnsw = readlineSync.question('Your answer: ');
     //  checking and output of the answers
-    if (answer === correctAnsw) {
+    if (answer === userAnsw) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnsw}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnsw}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${userName}!`);
       return;
     }
   }

@@ -4,23 +4,24 @@ import getRandomInRange from '../utils.js';
 
 const questionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const questionRound = () => {
+const isPrime = (num) => {
+  if (num <= 1) return false;
+  for (let divider = 2; divider <= num / 2; divider += 1) {
+    if (num % divider === 0) return false;
+  }
+  return true;
+};
+
+const generateRound = () => {
   const number = getRandomInRange();
   const question = `Question: ${number}`;
 
-  let result = '';
-  const isPrime = () => {
-    if (number <= 1) return 'no';
-    for (let divider = 2; divider <= number / 2; divider += 1) {
-      if (number % divider === 0) return 'no';
-    }
-    return 'yes';
-  };
-  result = isPrime();
+  // let answer = '';
+  const answer = isPrime(number) ? 'yes' : 'no';
 
-  return [question, result];
+  return [question, answer];
 };
 
-const primeGame = () => playGame(questionGame, questionRound);
+const primeGame = () => playGame(questionGame, generateRound);
 
 export default primeGame;
